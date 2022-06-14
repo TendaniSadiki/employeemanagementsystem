@@ -9,7 +9,7 @@ import SIgnup from '../Components/SIgnup/SIgnup';
 
 
 const AuthRoutes = () =>{
-    const [loginState, setLoginState] = useState(true)
+    const [loginState, setLoginState] = useState(false)
     return(
 //Router
         <Router>
@@ -24,7 +24,6 @@ const AuthRoutes = () =>{
             :
             //Offline Handler
                 <Routes>
-                    <Route exact path="*" element={<Login/>}/>
                     <Route exact path="/Signup" element={<SIgnup/>}/>
                     <Route exact path="/Login" element={<Login/>}/>
                 </Routes>

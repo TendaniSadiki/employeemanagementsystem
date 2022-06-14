@@ -1,9 +1,9 @@
-import React from 'react'
-import './topbar.css'
+import React from 'react';
+import './topbar.css';
 
 /*Online Nav Bar*/
 //Topbar Icons
-import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom';
 import {CgHome} from "react-icons/cg";
 import {CgUserlane} from "react-icons/cg";
 
@@ -14,12 +14,12 @@ function OnlineNav(props) {
         <div>
             
             <div className="linksContainer">  
-                    <NavLink to="/Home" activeStyle={{color: 'black'}} exact onClick={() => props.isMobile && props.closeMobileMenu()}><span><i><CgHome/>Home</i></span>
+                    <NavLink to="/Home" activestyle={{color: 'black'}} exact onClick={() => props.isMobile && props.closeMobileMenu()}><span><i><CgHome/>Home</i></span>
                     </NavLink>
                     <br></br>
-                    <NavLink to="/Profile" activeStyle={{color: 'black'}} onClick={() => props.isMobile && props.closeMobileMenu()} ><span><i ><CgUserlane/>Profile</i></span>
+                    <NavLink to="/Profile" activestyle={{color: 'black'}} onClick={() => props.isMobile && props.closeMobileMenu()} ><span><i ><CgUserlane/>Profile</i></span>
                     </NavLink>
-                    <NavLink to="/signin" activeStyle={{color: 'black'}} onClick={() => props.isMobile && props.closeMobileMenu()} ><span className="signout"><i><CgLogOff />Log Out</i></span>
+                    <NavLink to="/signin" activestyle={{color: 'black'}} onClick={() => props.isMobile && props.closeMobileMenu()} ><span className="signout"><i><CgLogOff />Log Out</i></span>
                     </NavLink>
                     </div>
         </div>

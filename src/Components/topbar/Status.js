@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 
 
 const Status = () =>{
-    const [loginState, setLoginState] = useState(true)
+    const [loginState, setLoginState] = useState(false)
    
         return(
             <Router>

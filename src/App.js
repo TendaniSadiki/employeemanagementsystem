@@ -5,6 +5,7 @@ import AuthRoutes from './Auth/Routes';
 
 //functional programing
 function App() {
+    
   return (
     <div>
     <AuthRoutes/>
