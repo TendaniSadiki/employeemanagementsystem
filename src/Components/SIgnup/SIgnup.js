@@ -18,7 +18,28 @@ const Signup = () => {
       pass: password,
       userImage: image,
     };
-
+    if(userdDetails.name === ""){
+      alert("Enter Username")
+    }else if(userdDetails.surname === ""){
+      alert("Enter Surname")
+    }
+    else if(userdDetails.email === ""){
+      alert("Enter Email")
+    }
+    else if(userdDetails.number === ""){
+      alert("Enter Contact number")
+    }
+    else if(userdDetails.userImage.length === 0){
+      alert("Select Image")
+    }
+    else if(userdDetails.pass === ""){
+      alert("Enter Password")
+    }
+    else if(userdDetails.pass.length < 6){
+      alert("password should be 6 characters")
+    }
+    
+    else{
     let storedUserDetails = new Array();
     let storedUsers = JSON.parse(localStorage.getItem("users"));
     if (storedUsers) {
@@ -29,7 +50,7 @@ const Signup = () => {
     }
     localStorage.setItem("users", JSON.stringify(storedUserDetails));
     window.location = "/Login";
-  };
+  };}
 
   return (
     <div>
@@ -65,6 +86,7 @@ const Signup = () => {
                   onChange={(text) => {
                     setName(text.target.value);
                   }}
+                  
                 />
               </div>
               <div className="input-group mb-3">
