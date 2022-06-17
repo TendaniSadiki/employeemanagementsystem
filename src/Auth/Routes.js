@@ -9,7 +9,7 @@ import SIgnup from '../Components/SIgnup/SIgnup';
 
 
 const AuthRoutes = () =>{
-    const [loginState, setLoginState] = useState(false)
+    const [loginState, setLoginState] = useState(false);
     return(
 //Router
         <Router>

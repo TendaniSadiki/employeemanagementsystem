@@ -9,6 +9,7 @@ const Login = () =>{
   let lowerCaseLetters = /[a-z]/g;
   let upperCaseLetters = /[A-Z]/g;
   let numbers = /[0-9]/g;
+  
  
 
   const signin = () => {
@@ -43,9 +44,19 @@ else if(!getDetails.pass.match(lowerCaseLetters)){
 
 }
   else{
-   
-    const storedEmail = localStorage.getItem("users");
-    console.log(storedEmail);
+    let storedUsers = JSON.parse(localStorage.getItem("users"));
+    for(let user of storedUsers) {
+      
+      if(email === user.email && password === user.pass){
+        alert("logging in")
+        window.location = "/Home";
+      }
+      else{
+        alert("failed to log in")
+      }
+      
+    }
+
   }
   }
     
@@ -89,13 +100,11 @@ else if(!getDetails.pass.match(lowerCaseLetters)){
 </div>
  <button type="button" className="btn btn-secondary btn-block" onClick={signin}>Log In</button>
  <NavLink to="../SIGNUP  "  exact ><span><i>Sign Up</i></span>
-                    </NavLink>  
+</NavLink>  
    </form>  
           </div>
         </div>
        </div>   
-      
-            
         </div>
     )
 }

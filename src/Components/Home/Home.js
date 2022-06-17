@@ -12,6 +12,7 @@ export default function Home(){
             <div id="friends">
                 <br></br>
                 <h3>Dashboard</h3>
+                
                 <ul>
                     <li> <i className="fas fa-user-circle"></i>New user</li>
                     <li><i className="fas fa-user-circle"></i>New user</li>

@@ -8,6 +8,7 @@ const Signup = () => {
   const [contactNumber, setContactNUmber] = useState("");
   const [password, setPassword] = useState("");
   const [image, setImage] = useState("");
+  const [loginState, setLoginState] = useState(false);
   let lowerCaseLetters = /[a-z]/g;
   let upperCaseLetters = /[A-Z]/g;
   let numbers = /[0-9]/g;
@@ -20,6 +21,7 @@ const Signup = () => {
       number: contactNumber,
       userImage: image,
       pass: password,
+      login:loginState
       
     };
     if(userdDetails.name === "" && userdDetails.surname === "" && userdDetails.email ==="" && userdDetails.number ==="" && userdDetails.userImage.length ===0 && userdDetails.pass === ""){
