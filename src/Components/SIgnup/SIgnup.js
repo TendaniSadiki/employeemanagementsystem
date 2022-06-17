@@ -15,10 +15,14 @@ const Signup = () => {
       surname: surname,
       email: email,
       number: contactNumber,
-      pass: password,
       userImage: image,
+      pass: password,
+      
     };
-    if(userdDetails.name === ""){
+    if(userdDetails.name === "" && userdDetails.surname === "" && userdDetails.email ==="" && userdDetails.number ==="" && userdDetails.userImage.length ===0 && userdDetails.pass === ""){
+      alert("Please fill in all inputs")
+    }
+    else if(userdDetails.name === ""){
       alert("Enter Username")
     }else if(userdDetails.surname === ""){
       alert("Enter Surname")
@@ -48,6 +52,7 @@ const Signup = () => {
     } else {
       storedUserDetails.push(userdDetails);
     }
+    alert('Your account has been created');
     localStorage.setItem("users", JSON.stringify(storedUserDetails));
     window.location = "/Login";
   };}
@@ -143,6 +148,7 @@ const Signup = () => {
                 <input
                   type="file"
                   className="form-control"
+                  accept='image/png ,image/jpg'
                   onChange={(text) => {
                     setImage(text.target.files[0]);
                   }}
