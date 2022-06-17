@@ -8,6 +8,9 @@ const Signup = () => {
   const [contactNumber, setContactNUmber] = useState("");
   const [password, setPassword] = useState("");
   const [image, setImage] = useState("");
+  let lowerCaseLetters = /[a-z]/g;
+  let upperCaseLetters = /[A-Z]/g;
+  let numbers = /[0-9]/g;
 
   const register = () => {
     let userdDetails = {
@@ -30,6 +33,9 @@ const Signup = () => {
     else if(userdDetails.email === ""){
       alert("Enter Email")
     }
+    else if(!userdDetails.email.includes("@")){
+      alert("Email doesn't exist")
+    }
     else if(userdDetails.number === ""){
       alert("Enter Contact number")
     }
@@ -42,6 +48,18 @@ const Signup = () => {
     else if(userdDetails.pass.length < 6){
       alert("password should be 6 characters")
     }
+    else if(!userdDetails.pass.match(numbers)){
+      alert('please add 1 number');
+  
+  }
+  else if(!userdDetails.pass.match(upperCaseLetters)){
+      alert('please add 1 uppercase letter');
+  
+  }
+  else if(!userdDetails.pass.match(lowerCaseLetters)){
+      alert('please add 1 lovercase letter');
+  
+  }
     
     else{
     let storedUserDetails = new Array();
