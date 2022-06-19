@@ -47,16 +47,18 @@ else if(!getDetails.pass.match(lowerCaseLetters)){
     let storedUsers = JSON.parse(localStorage.getItem("users"));
     for(let user of storedUsers) {
       
-      if(email === user.email && password === user.pass){
-        alert("logging in")
-        window.location = "/Home";
-      }
-      else{
-        alert("failed to log in")
-      }
+    
       
     }
-
+    /*
+    if(email === user.email && password === user.pass){
+      alert("logging in")
+      window.location = "/Home";
+    }
+    else{
+      alert("failed to log in")
+    }
+    */
   }
   }
     
