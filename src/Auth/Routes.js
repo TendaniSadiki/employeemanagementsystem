@@ -9,7 +9,17 @@ import SIgnup from '../Components/SIgnup/SIgnup';
 
 
 const AuthRoutes = () =>{
-    const [loginState, setLoginState] = useState(false);
+    const [loginState, setLoginState] = useState(JSON.parse(localStorage.getItem("loginState")));
+    window.addEventListener('storage',  (event)=>{
+       
+            
+            const loginValue = localStorage.getItem("loginState");
+            if(loginValue === "true"){
+                setLoginState(true) 
+               
+            }
+        
+    })
     return(
 //Router
         <Router>

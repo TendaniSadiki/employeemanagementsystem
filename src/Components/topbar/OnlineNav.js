@@ -9,6 +9,7 @@ import {CgUserlane} from "react-icons/cg";
 
 import {CgLogOff} from "react-icons/cg";
 function OnlineNav(props) {
+
     //Topbar navlinks Online
     return (
         <div>
@@ -16,12 +17,12 @@ function OnlineNav(props) {
             <div className="linksContainer">  
                     <NavLink to="*" activestyle={{color: 'black'}} exact onClick={() => props.isMobile && props.closeMobileMenu()}><span></span>
                     </NavLink>
-                    <NavLink to="/Home" activestyle={{color: 'black'}} exact onClick={() => props.isMobile && props.closeMobileMenu()}><span><i><CgHome/>Home</i></span>
+                    <NavLink to="./Home" activestyle={{color: 'black'}} exact onClick={() => {props.isMobile && props.closeMobileMenu(); window.location="/Home"}}><span><i><CgHome/>Home</i></span>
                     </NavLink>
                 
-                    <NavLink to="/Profile" activestyle={{color: 'black'}} exact onClick={() => props.isMobile && props.closeMobileMenu()} ><span><i ><CgUserlane/>Profile</i></span>
+                    <NavLink to="./Profile" activestyle={{color: 'black'}} exact onClick={() =>{ props.isMobile && props.closeMobileMenu(); window.location="/Profile"}} ><span><i ><CgUserlane/>Profile</i></span>
                     </NavLink>
-                    <NavLink to="../Login" activestyle={{color: 'black'}} exact onClick={() => props.isMobile && props.closeMobileMenu()} ><span className="signout"><i><CgLogOff />Log Out</i></span>
+                    <NavLink to="../Login" activestyle={{color: 'black'}} exact onClick={() => {props.isMobile && props.closeMobileMenu();  window.localStorage.setItem("loginState", "false");  window.location="/Login"}} ><span className="signout"><i><CgLogOff />Log Out</i></span>
                     </NavLink>
                     </div>
         </div>

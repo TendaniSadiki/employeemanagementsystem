@@ -21,7 +21,8 @@ const Signup = () => {
       number: contactNumber,
       userImage: image,
       pass: password,
-      login:loginState
+      login:loginState,
+      time: new Date
       
     };
     if(userdDetails.name === "" && userdDetails.surname === "" && userdDetails.email ==="" && userdDetails.number ==="" && userdDetails.userImage.length ===0 && userdDetails.pass === ""){

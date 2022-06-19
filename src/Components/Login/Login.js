@@ -45,20 +45,31 @@ else if(!getDetails.pass.match(lowerCaseLetters)){
 }
   else{
     let storedUsers = JSON.parse(localStorage.getItem("users"));
+    let userFound = false;
     for(let user of storedUsers) {
       
+      if(email === user.email && password === user.pass){
+        let getProfileInfo = {
+          email: user.name,
+          surname: user.surname,
+          number: user.number
+          
+        };
+        localStorage.setItem("profileInfo", JSON.stringify(getProfileInfo));
+        alert("logging in")
+        userFound = true;
+        
+        window.localStorage.setItem("loginState", "true");
+        window.dispatchEvent(new Event("storage"))
+      }
     
       
-    }
-    /*
-    if(email === user.email && password === user.pass){
-      alert("logging in")
-      window.location = "/Home";
-    }
-    else{
-      alert("failed to log in")
-    }
-    */
+   }
+if(!userFound){
+  alert("failed to log in")
+}
+    
+
   }
   }
     

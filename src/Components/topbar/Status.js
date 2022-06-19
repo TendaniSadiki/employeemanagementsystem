@@ -5,8 +5,17 @@ import React, { useState } from 'react'
 
 
 const Status = () =>{
-    const [loginState, setLoginState] = useState(true)
-   
+    const [loginState, setLoginState] = useState(JSON.parse(localStorage.getItem("loginState")));
+    window.addEventListener('storage',  (event)=>{
+       
+            
+        const loginValue = localStorage.getItem("loginState");
+        if(loginValue === "true"){
+            setLoginState(true) 
+           
+        }
+    
+})
         return(
             <Router>
                 {
